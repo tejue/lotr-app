@@ -7,7 +7,6 @@ import Head from "next/head";
 export default function Volume() {
   const router = useRouter();
   const { slug } = router.query;
-  //const currentVolume = volumes.find((volume) => volume.slug === slug);
 
   const volumeIndex = volumes.findIndex((volume) => volume.slug === slug);
   const volume = volumes[volumeIndex];

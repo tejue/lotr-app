@@ -4,20 +4,18 @@ import { useRouter } from "next/router";
 import { volumes } from "../../lib/data";
 import { introduction } from "../../lib/data";
 
-import { slug } from "./[slug]";
-
 export default function Volumes() {
-  const router = useRouter();
-
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
   }
 
-  const handleButtonClick = () => {
-    const randomVolume = getRandomElement(volumes);
-    const randomPage = randomVolume.slug;
-    window.location.href = `volumes/${randomPage}`;
-  };
+  const router = useRouter();
+  const randomVolume = getRandomElement(volumes);
+  const randomVolumePage = randomVolume.slug;
+
+  function handleRandomButtonClick() {
+    router.push(`/volumes/${randomVolumePage}`);
+  }
 
   return (
     <>
@@ -33,7 +31,9 @@ export default function Volumes() {
           </li>
         ))}
       </ul>
-      <button onClick={handleButtonClick}>Surprise me with a Volume</button>
+      <button type="button" onClick={handleRandomButtonClick}>
+        Surprise me with a random Volume
+      </button>
     </>
   );
 }

@@ -18,7 +18,7 @@ export default function VolumeTwo() {
           {data.books[1].ordinal}: {data.books[1].title}
         </li>
       </ul>
-      <Image src={data.cover} width={140} height={230} alt="Bookcover" />
+      <Image src={data.cover} width={140} height={230} alt={data.title} />
       <p>
         <Link href="the-fellowship-of-the-ring">
           Previous Volume: The Fellowship of the Ring{" "}

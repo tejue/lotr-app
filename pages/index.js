@@ -5,7 +5,9 @@ export default function HomePage() {
     <div>
       <h1>The Lord of the Rings-App</h1>
       <p>
-        <Link href="./volumes">Show all Volumes</Link>
+        <Link href="./volumes">
+          Dive into the world of The Lord of the Rings
+        </Link>
       </p>
     </div>
   );

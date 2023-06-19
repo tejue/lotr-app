@@ -29,12 +29,11 @@ export default function Volume() {
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
-        <li>
-          {books[0].ordinal}: {books[0].title}
-        </li>
-        <li>
-          {books[1].ordinal}: {books[1].title}
-        </li>
+        {books.map(({ ordinal, title }) => (
+          <li key={title}>
+            {ordinal}: {title}
+          </li>
+        ))}
       </ul>
       <Image src={cover} width={140} height={230} alt={`Bookcover: ${title}`} />
       <p>
